@@ -1,0 +1,8 @@
+{
+  "name": "neopian-hq",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Standalone Neopian HQ dashboard with a cautious Food Club page reader",
+  "dependencies": {"cheerio": "1.0.0"},
+  "engines": {"node": ">=20"}
+}
