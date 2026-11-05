@@ -21,3 +21,15 @@ This Netlify project contains the existing dashboard (`index.html`) plus a read-
 ## Live NeoStocks quotes
 
 `netlify/functions/stocks.mjs` fetches the public NeoStocks JSON data and returns a small read-only JSON payload. It uses a five-minute Netlify durable CDN cache. The dashboard fetches it at startup and roughly every five minutes when visible; saved quotes and holdings survive API failures. Visit `/.netlify/functions/stocks` after deployment to check the upstream connection. No API keys or Neopets credentials are needed.
+
+## Layout update
+- NeoStocks is now full width beneath the main activity columns.
+- The market ticker grid uses two columns on desktop and one column on narrow screens.
+- The holdings editor is collapsed by default (open **Manage your stock holdings** to add purchases or change targets).
+- Manual price overrides are also collapsible; live-price refresh remains visible.
+- Your dashboard settings appear as a full-width footer beneath NeoStocks.
+- Existing localStorage keys and Netlify functions are unchanged, so saved holdings and live pricing remain compatible.
+
+## Layout revision
+
+Full-width three-column dailies; daily section auto-collapses when all tasks are checked (with an accessible manual toggle). Side-by-side Snowager and Tarla, including three Snowager windows. Food Club, NeoStocks, and settings are full width. Responsive on tablets and phones. Existing saved data and Netlify functions unchanged.
