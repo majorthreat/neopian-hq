@@ -17,3 +17,7 @@ This Netlify project contains the existing dashboard (`index.html`) plus a read-
 - The response has a shared-cache policy of 15 minutes to avoid needless repeated requests, subject to Netlify infrastructure behavior.
 - Only links pointing to `neofood.club` and tables with Food Club arena headers are extracted. It does not guess missing bets.
 - If you see `No recognizable betting tables`, share the exact petpage HTML (or a copy of the source) to refine the parser; this environment cannot fetch that page to confirm its actual markup.
+
+## Live NeoStocks quotes
+
+`netlify/functions/stocks.mjs` fetches the public NeoStocks JSON data and returns a small read-only JSON payload. It uses a five-minute Netlify durable CDN cache. The dashboard fetches it at startup and roughly every five minutes when visible; saved quotes and holdings survive API failures. Visit `/.netlify/functions/stocks` after deployment to check the upstream connection. No API keys or Neopets credentials are needed.
